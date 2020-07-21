@@ -46,7 +46,6 @@ private fun doLogin(email :String, password :String){
     auth?.signInWithEmailAndPassword(email, password)
         ?.addOnCompleteListener(this) { task ->
             if (task.isSuccessful) {
-                Toast.makeText(this, "Successfully logged in", Toast.LENGTH_SHORT).show()
                 startActivity(
                     Intent(
                         this,

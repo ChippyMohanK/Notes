@@ -86,7 +86,7 @@ class CreateFragment : BaseFragment(), View.OnClickListener {
                 shareNote()
             }
             else{
-                Toast.makeText(context,"Cant share the data",Toast.LENGTH_LONG).show()
+                Toast.makeText(context,"Can't share the data",Toast.LENGTH_LONG).show()
             }
         }
         return super.onOptionsItemSelected(item)
