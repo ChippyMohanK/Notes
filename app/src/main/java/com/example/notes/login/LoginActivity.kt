@@ -13,8 +13,6 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : BaseActivity(), View.OnClickListener {
     private var auth: FirebaseAuth? = null
-    private var email: String? = ""
-    private var password: String? = ""
     override fun initComponents() {
         btLogin.setOnClickListener(this)
         btSignUp.setOnClickListener(this)
