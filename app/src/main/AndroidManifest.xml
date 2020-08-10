@@ -24,7 +24,7 @@
         <activity android:name="com.example.notes.login.LoginActivity">
         </activity>
         <activity android:name="com.example.notes.SignUp.SignUpActivity"/>
-        <activity android:name="com.example.notes.ui.MainActivity"/>
+        <activity android:name="com.example.notes.ui.MainActivity" />
         <activity android:name="com.example.notes.note.BaseActivity"/>
         <activity android:name=".navigation.NavDraweractivity"/>
 

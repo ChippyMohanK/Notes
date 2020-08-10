@@ -61,7 +61,6 @@ private fun doLogin(email :String, password :String){
             R.id.btLogin -> {
                 signIn()
 
-
             }
             R.id.btSignUp -> {
                 val intent = Intent(this, SignUpActivity::class.java)

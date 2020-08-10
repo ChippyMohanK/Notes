@@ -31,8 +31,5 @@ class NoteFragment : BaseFragment() {
       return R.layout.fragment_notes
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
-    }
 }

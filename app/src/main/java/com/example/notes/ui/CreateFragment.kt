@@ -17,6 +17,7 @@ import kotlinx.coroutines.launch
 
 class CreateFragment : BaseFragment(), View.OnClickListener {
     private var note: Note? = null
+
     override fun initComponents() {
         btAdd.setOnClickListener(this)
         setHasOptionsMenu(true)
@@ -37,6 +38,7 @@ class CreateFragment : BaseFragment(), View.OnClickListener {
             R.id.btAdd -> {
                 val title = teTitle.text.toString().trim()
                 val noteBody = teDescription.text.toString().trim()
+                if(!title.isEmpty())
                 if (title.isEmpty()) {
                     teTitle.error = "Title required"
                     teTitle.requestFocus()
@@ -59,14 +61,13 @@ class CreateFragment : BaseFragment(), View.OnClickListener {
                         }
                         val action = CreateFragmentDirections.actionSave()
                         Navigation.findNavController(requireView()).navigate(action)
-
-
                     }
                 }
             }
         }
 
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
@@ -82,7 +83,9 @@ class CreateFragment : BaseFragment(), View.OnClickListener {
             {
                 Toast.makeText(context, "Cant delete", Toast.LENGTH_LONG).show()
             }
-            R.id.share -> if (note!=null){
+            R.id.share ->
+                if (note!=null)
+                {
                 shareNote()
             }
             else{
@@ -107,12 +110,13 @@ class CreateFragment : BaseFragment(), View.OnClickListener {
         }.create().show()
     }
     private fun shareNote(){
-        val sendIntent: Intent = Intent().apply {
-            action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_TEXT, note)
-            type = "text/plain"
+        val t = note?.title
+        val d = note?.note
+        val shareIntent = Intent().apply {
+            this.action = Intent.ACTION_SEND_MULTIPLE
+            this.putExtra(Intent.EXTRA_TEXT, note?.note )
+            this.type = "text/plan"
         }
-        val shareIntent = Intent.createChooser(sendIntent, null)
         startActivity(shareIntent)
     }
 

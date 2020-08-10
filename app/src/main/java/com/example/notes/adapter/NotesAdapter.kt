@@ -28,7 +28,7 @@ class NotesAdapter(val notes: List<Note>) : RecyclerView.Adapter<NotesAdapter.No
 
     }
 
-    override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: NoteViewHolder, position: Int) { 
         holder.view.card_view.setCardBackgroundColor(getRandomcolorCode())
         holder.view.tvTitle.text = notes[position].title
         holder.view.tvDescription.text = notes[position].note
@@ -45,6 +45,4 @@ class NotesAdapter(val notes: List<Note>) : RecyclerView.Adapter<NotesAdapter.No
     }
 }
 
-private operator fun ColorStateList.invoke(randomcolorCode: Int) {
 
-}
